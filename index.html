@@ -9,7 +9,7 @@
   <meta property="og:title" content="Anam Rehan – Skill-Based Growth for Women">
   <meta property="og:description" content="Join thousands of women building successful digital careers from home. Start your journey today.">
   <meta name="theme-color" content="#B5435A">
-  <meta property="og:image" content="https://i.ibb.co/jkfNKnmr/4.jpg">
+  <meta property="og:image" content="https://i.ibb.co/8LhfJ1LC/new-anam-pic.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -677,7 +677,7 @@ src="https://www.facebook.com/tr?id=2674867649596473&ev=PageView&noscript=1"
     <div class="photo-frame" style="margin: 0 auto; display: block; text-align: center;">
       <div class="photo-ring"></div>
       <div class="photo-inner">
-        <img src="https://i.ibb.co/jkfNKnmr/4.jpg" alt="Anam Rehan">
+        <img src="https://i.ibb.co/8LhfJ1LC/new-anam-pic.jpg" alt="Anam Rehan">
       </div>
       <div class="badge-float b1">
         <div class="dot"></div>
@@ -1182,6 +1182,13 @@ src="https://www.facebook.com/tr?id=2674867649596473&ev=PageView&noscript=1"
       `Hello Ma'am,\n\nI am interested in your women-only program. Here are my details:\n\nName: ${name}\nPhone: ${phone}\nAge: ${age}\nGender: ${gender}\nProfession: ${profession}\n\nPlease share next steps. Thank you!`
     );
     window.open(`https://wa.me/${WA_NUMBER_INT}?text=${message}`, '_blank');
+
+    // Contact event — fires once per session only
+    if (typeof fbq !== 'undefined' && !sessionStorage.getItem('anam_contact_tracked')) {
+      fbq('track', 'Contact');
+      sessionStorage.setItem('anam_contact_tracked', 'true');
+    }
+
     closeForm();
   });
 
